@@ -90,22 +90,22 @@ main
         
       form(action="recruit")
 
-        div.form-set.col-1-2
+        div.form-set.name.col-1-2
           span お名前
           br
           input(type="text" name="name" spellcheck="false")
 
-        div.form-set.col-1-2
+        div.form-set.email.col-1-2
           span メールアドレス
           br
-          input(type="email" name="email")
+          input(type="email" name="email" spellcheck="false")
 
-        div.form-set
+        div.form-set.shipname
           span 希望船名
           br
-          input(type="text" name="ship")
+          input(type="text" name="ship" spellcheck="false")
 
-        div.form-set
+        div.form-set.content
           span 内容
           br
           textarea(type="text" name="content")
@@ -130,7 +130,7 @@ main
           div.form-set.col-1-2
             span メールアドレス
             br
-            input(type="email" name="email")
+            input(type="email" name="email" spellcheck="false")
 
           div.form-set
             span 内容

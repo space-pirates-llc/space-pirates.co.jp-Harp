@@ -5,6 +5,8 @@ $(function(){
   
   $(".btn-select-ship").on("click", function(){
     scrollTo($(".submit-card"));
+    $(".submit-card, .minify-button").addClass("open");
+    $(".shipname").eq(0).find("input").attr("value", $(this).parent().find(".card-header > span").text());
   });
   
   $(".minify-button").on("click", function(){
