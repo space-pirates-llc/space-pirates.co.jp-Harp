@@ -28,7 +28,7 @@
   &:before{
     @include skewedge;
     bottom: 100%;
-    border-color: transparent transparent #f3f3f3 transparent;
+    border-color: transparent transparent $white-gray transparent;
   }
 }
 
@@ -36,6 +36,6 @@
   &:after{
     @include skewedge;
     top: 100%;
-    border-color: transparent #f3f3f3 transparent transparent;
+    border-color: transparent $white-gray transparent transparent;
   }
 }

@@ -30,7 +30,7 @@ header{
   height: 80px;
   width: 100%;
   z-index: 10;
-  background: #ffffff;
+  background: $pure-white;
   
   ul{
     position: relative;
@@ -106,8 +106,8 @@ header{
   width: 100%;
   padding: 30px 20px;
   margin-bottom: 40px;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 6px #c3c3c3;
+  background-color: $pure-white;
+  box-shadow: 0px 2px 6px $bright-gray;
   
   div{
     box-sizing: border-box;
@@ -116,7 +116,7 @@ header{
       padding: 10px 8px;
     }
     p{
-      color: #555555;
+      color: $dark-gray;
       vertical-align: top;
       font-size: 0.95em;
       margin: 0;
@@ -130,7 +130,7 @@ header{
       
       &:nth-child(1){
         @extend .col-1-5;
-        color: #95989A;
+        color: $normal-gray;
         text-align: center;
         @media screen and (max-width: $break-small){
           font-size: 0.6em;
@@ -148,7 +148,7 @@ header{
       margin-left: 20%;
       font-size: 0.8em;
       text-decoration: none;
-      color: #448aff;
+      color: $link-color;
       @media screen and (max-width: $break-small){
         margin: 0;
         display: block;
@@ -162,15 +162,15 @@ header{
 @mixin button{
   display: block;
   margin: 50px auto 0px auto;
-  background-color: #fafafa;
-  border: solid 2px #212121;
+  background-color: $white;
+  border: solid 2px $bright-black;
   cursor: pointer;
   transition: 0.1s ease;
   width: 120px;
   height: 45px;
 
   &:hover{
-    background-color: #c4c4c4;
+    background-color: $bright-gray;
   }
 
   span{
@@ -188,7 +188,7 @@ header{
   box-sizing: border-box;
   padding: 80px 20px 30px 20px;
   vertical-align: top;
-  box-shadow: 0px 2px 6px #c3c3c3;
+  box-shadow: 0px 2px 6px $bright-gray;
   
   @media screen and (max-width: 1080px){
     width: 100%;
@@ -208,11 +208,11 @@ header{
     width: 100%;
     box-sizing: border-box;
     padding-left: 20px;
-    background-color: #212121;
+    background-color: $bright-black;
     
     span{
       line-height: 60px;
-      color: #fafafa;
+      color: $white;
       text-transform: capitalize;
       font-size: 1.2em;
       font-family: $semibold-font;
@@ -231,7 +231,7 @@ header{
       @mixin cross-bars{
         content: "";
         position: absolute;
-        background-color: #fafafa;
+        background-color: $white;
         transition: 0.2s ease;
       }
       
@@ -261,13 +261,13 @@ header{
   }
   
   p:nth-child(even){
-    color: #313131;
+    color: $very-dark-gray;
     font-size: 1.2em;
     margin-bottom: 0;
   }
   
   p:nth-child(odd){
-    color: #585858;
+    color: $dark-gray;
     margin-top: 3px;
     font-size: 0.9em;
   }
@@ -297,10 +297,10 @@ header{
     }
     span{
       font-size: 0.7em;
-      color: #555555;
+      color: $dark-gray;
     }
     @mixin text-input{
-      background-color: #F3F3F3;
+      background-color: $white-gray;
       box-sizing: border-box;
       padding: 5px 10px;
       border: none;
@@ -348,7 +348,7 @@ header{
   @extend .submit-card;
   padding: 90px 20px 30px 20px;
   padding-top: 30px;
-  background-color: #fafafa;
+  background-color: $white;
   
   form{
     display: block;
