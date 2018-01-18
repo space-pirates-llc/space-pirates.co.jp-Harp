@@ -1,0 +1,412 @@
+@import "variables";
+@import "responsive";
+@import "skewbox";
+
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  margin: 0;
+  font-family: $medium-font;
+}
+
+hr{
+  border: none;
+  clear: both;
+}
+
+h1{
+  font-family: $bold-font;
+  font-weight: $bold-weight;
+  margin-bottom: -5px;
+  text-align: center;
+  font-size: 1.7em;
+}
+
+header{
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  z-index: 10;
+  background: #ffffff;
+  
+  ul{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin: 0px auto;
+    padding: 0px;
+    width: 650px;
+    line-height: 80px;
+    
+    @media screen and (max-width: $break-small){
+      width: 350px;
+    }
+    
+    li{
+      padding: 0px;
+      list-style: none;
+      text-transform: uppercase;
+      vertical-align: bottom;
+      font-size: 1.1em;
+      font-family: $bold-font;
+      font-weight: $bold-weight;
+      @media screen and (max-width: $break-small){
+        font-size: 0.9em;
+      }
+      a{
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.logobox{
+  @extend .skewbox;
+  margin-top: 0;
+  height: 300px;
+}
+
+.logoimage{
+  position: relative;
+  margin: 80px auto 100px auto;
+  height: 500px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.about-container{
+  box-sizing: border-box;
+  margin-top: 0px !important;
+  padding: 0px 60px;
+  p{
+    @extend h1;
+    font-family: $medium-font;
+    text-align: left;
+    font-weight: 300;
+    font-size: 1.2em;
+    margin: 0 0 32px 0;
+    @media screen and (max-width: $break-small){
+      font-size: 0.9em;
+    }
+    &.small{
+      font-size: 1em;
+      @media screen and (max-width: $break-small){
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+.news-articles-wrapper{
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px 20px;
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 6px #c3c3c3;
+  
+  div{
+    box-sizing: border-box;
+    padding: 15px 10px;
+    @media screen and (max-width: $break-small){
+      padding: 10px 8px;
+    }
+    p{
+      color: #555555;
+      vertical-align: top;
+      font-size: 0.95em;
+      margin: 0;
+      padding: 0;
+      
+      @media screen and (max-width: $break-small){
+        font-size: 0.7em;
+        display: block !important;
+        width: 100% !important;
+      }
+      
+      &:nth-child(1){
+        @extend .col-1-5;
+        color: #95989A;
+        text-align: center;
+        @media screen and (max-width: $break-small){
+          font-size: 0.6em;
+          text-align: left !important;
+        }
+      }
+      
+      &:nth-child(2){
+        @extend .col-4-5;
+        word-break: break-all;
+        text-align: left;
+      }
+    }
+    a{
+      margin-left: 20%;
+      font-size: 0.8em;
+      text-decoration: none;
+      color: #448aff;
+      @media screen and (max-width: $break-small){
+        margin: 0;
+        display: block;
+        font-size: 0.4em;
+        margin-top: 0.4em;
+      }
+    }
+  }
+}
+
+@mixin button{
+  display: block;
+  margin: 50px auto 0px auto;
+  background-color: #fafafa;
+  border: solid 2px #212121;
+  cursor: pointer;
+  transition: 0.1s ease;
+  width: 120px;
+  height: 45px;
+
+  &:hover{
+    background-color: #c4c4c4;
+  }
+
+  span{
+    display: block;
+    text-align: center;
+    line-height: 45px;
+  }
+}
+
+.recruit-card{
+  position: relative;
+  display: inline-block;
+  width: 440px;
+  margin: 10px 20px 10px 20px;
+  box-sizing: border-box;
+  padding: 80px 20px 30px 20px;
+  vertical-align: top;
+  box-shadow: 0px 2px 6px #c3c3c3;
+  
+  @media screen and (max-width: 1080px){
+    width: 100%;
+    margin: 20px 0 20px 0;
+  }
+  
+  @media screen and (max-width: $break-small){
+    margin: 30px 0px;
+    width: 100%;
+  }
+  
+  .card-header{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 20px;
+    background-color: #212121;
+    
+    span{
+      line-height: 60px;
+      color: #fafafa;
+      text-transform: capitalize;
+      font-size: 1.2em;
+      font-family: $semibold-font;
+    }
+    
+    .minify-button{
+      position: relative;
+      float: right;
+      box-sizing: border-box;
+      transition: 0.2s ease;
+      cursor: pointer;
+      padding: 10px;
+      height: 60px;
+      width: 60px;
+      
+      @mixin cross-bars{
+        content: "";
+        position: absolute;
+        background-color: #fafafa;
+        transition: 0.2s ease;
+      }
+      
+      &:before{
+        @include cross-bars;
+        top: 28px;
+        left: 15px;
+        height: 4px;
+        width: 30px;
+      }
+      
+      &:after{
+        @include cross-bars;
+        top: 15px;
+        left: 28px;
+        height: 30px;
+        width: 4px;
+        opacity: 1;
+      }
+      
+      &.open{
+        &:after{
+          opacity: 0;
+        }
+      }
+    }
+  }
+  
+  p:nth-child(even){
+    color: #313131;
+    font-size: 1.2em;
+    margin-bottom: 0;
+  }
+  
+  p:nth-child(odd){
+    color: #585858;
+    margin-top: 3px;
+    font-size: 0.9em;
+  }
+  
+  .btn-select-ship{
+    @include button;
+  }
+}
+
+.submit-card{
+  @extend .recruit-card;
+  width: 80%;
+  display: block;
+  padding: 60px 0 0 0;
+  margin: 40px auto;
+  @media screen and (max-width: $break-small){
+    margin: 30px 0px;
+    width: 100%;
+  }
+  .form-set{
+    box-sizing: border-box;
+    padding: 10px 20px;
+    position: relative;
+    @media screen and (max-width: $break-small){
+      display: block;
+      width: 100%;
+    }
+    span{
+      font-size: 0.7em;
+      color: #555555;
+    }
+    @mixin text-input{
+      background-color: #F3F3F3;
+      box-sizing: border-box;
+      padding: 5px 10px;
+      border: none;
+      width: 100%;
+      height: 1.8em;
+      line-height: 1.4em;
+      font-size: 1em;
+      outline: none;
+    }
+    input{
+      @include text-input;
+    }
+    textarea{
+      @include text-input;
+      height: 5em;
+      resize: vertical;
+    }
+  }
+  .btn-submit-recruit{
+    @include button;
+    font-size: 1em;
+  }
+  
+  form > *{
+    opacity: 0;
+    transition: 0.2s ease;
+  }
+  
+  form{
+    display: none;
+  }
+  
+  &.open{
+    padding: 90px 20px 30px 20px;
+    form{
+      display: block;
+      *{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.contact-card{
+  @extend .submit-card;
+  padding: 90px 20px 30px 20px;
+  padding-top: 30px;
+  background-color: #fafafa;
+  
+  form{
+    display: block;
+    *{
+      opacity: 1;
+    }
+  }
+  
+  .btn-submit-contact{
+    @include button;
+    font-size: 1em;
+  }
+}
+
+[class*="-container"]{
+  max-width: 960px;
+  padding: 0px 60px;
+  margin: 0px auto;
+  @media screen and (max-width: $break-small){
+    padding: 0px 20px;
+  }
+}
+
+.col-1-5{
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+}
+
+.col-4-5{
+  display: inline-block;
+  vertical-align: top;
+  width: 80%;
+}
+
+.col-1-2{
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
+.title-wrapper{
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  clear: both;
+  
+  span{
+    font-family: $bold-font;
+    font-weight: $bold-weight;
+    font-size: 0.7em;
+  }
+}
+
+.no-margin-top{
+  margin-top: 0 !important;
+}
+
+.absolute{
+  position: absolute !important;
+}
