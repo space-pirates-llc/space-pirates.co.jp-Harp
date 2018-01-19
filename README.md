@@ -4,7 +4,7 @@
 
 ```
 $ cd [this repository]
-$ npm install harp
+$ npm install
 $ harp server
 ```
 
