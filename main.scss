@@ -100,6 +100,12 @@ header{
   }
 }
 
+.news-container{
+  @media screen and (max-width: $break-small){
+    padding: 0 !important;
+  }
+}
+
 .news-articles-wrapper{
   position: relative;
   box-sizing: border-box;
@@ -109,12 +115,18 @@ header{
   background-color: $pure-white;
   box-shadow: 0px 2px 6px $bright-gray;
   
+  @media screen and (max-width: $break-small){
+    padding: 15px 10px;
+  }
+    
   div{
     box-sizing: border-box;
     padding: 15px 10px;
+    
     @media screen and (max-width: $break-small){
       padding: 10px 8px;
     }
+    
     p{
       color: $dark-gray;
       vertical-align: top;
@@ -123,7 +135,7 @@ header{
       padding: 0;
       
       @media screen and (max-width: $break-small){
-        font-size: 0.7em;
+        font-size: 0.8em;
         display: block !important;
         width: 100% !important;
       }

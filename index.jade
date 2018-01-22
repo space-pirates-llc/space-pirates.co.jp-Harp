@@ -90,27 +90,27 @@ main
         span 応募フォーム
         div.minify-button
         
-      form(action="recruit")
+      form(name="recruit" action="recruit" netlify)#recruit
 
         div.form-set.name.col-1-2
           span お名前
           br
-          input(type="text" name="name" spellcheck="false")
+          input(type="text" name="name" spellcheck="false" required)
 
         div.form-set.email.col-1-2
           span メールアドレス
           br
-          input(type="email" name="email" spellcheck="false")
+          input(type="email" name="email" spellcheck="false" required)
 
         div.form-set.shipname
           span 希望船名
           br
-          input(type="text" name="ship" spellcheck="false")
+          input(type="text" name="ship" spellcheck="false" required)
 
         div.form-set.content
           span 内容
           br
-          textarea(type="text" name="content")
+          textarea(type="text" name="content" required)
           
         input.btn-submit-recruit(type="submit")
         
@@ -122,22 +122,22 @@ main
       
       div.contact-card
       
-        form(action="contact")
+        form(name="contact" action="contact" netlify)#contact
 
           div.form-set.col-1-2
             span お名前
             br
-            input(type="text" name="name" spellcheck="false")
+            input(type="text" name="name" spellcheck="false" required)
 
           div.form-set.col-1-2
             span メールアドレス
             br
-            input(type="email" name="email" spellcheck="false")
+            input(type="email" name="email" spellcheck="false" required)
 
           div.form-set
             span 内容
             br
-            textarea(type="text" name="content")
+            textarea(type="text" name="content" required)
 
           input.btn-submit-contact(type="submit")
           
