@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/space-pirates-llc/space-pirates.co.jp-Harp/issues"
   },
-  "homepage": "https://github.com/space-pirates-llc/space-pirates.co.jp-Harp#readme"
+  "homepage": "https://github.com/space-pirates-llc/space-pirates.co.jp-Harp#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "harp": "^0.25.0"
+  }
 }
