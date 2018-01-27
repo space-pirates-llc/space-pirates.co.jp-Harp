@@ -1,0 +1,85 @@
+@import "partial/variables";
+@import "partial/responsive";
+
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $white;
+}
+
+body{
+  margin: 0;
+  font-family: $medium-font;
+  text-align: center;
+  background-color: $bright-black;
+  
+  background-image: url("./images/jupiter.svg");
+  background-size: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main{
+  max-width: $break-large;
+  margin: 0px auto;
+  z-index: 1;
+  height: 100vh;
+  
+  *{
+    margin: 0;
+  }
+  
+  .center{
+    position: absolute;
+    box-sizing: border-box;
+    padding: 50px;
+    border-radius: 20px;
+    background-color: rgba(33, 33, 33, 0.2);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    .back-wrapper{
+      max-width: $break-small;
+      padding-top: 50px;
+      
+      a{
+        text-decoration: none;
+        
+        span{
+          line-height: 40px;
+          vertical-align: top;
+          padding-right: 10px;
+        }
+
+        img{
+          height: 40px;
+          object-fit: contain;
+          transition: 0.4s ease;
+          transform: translate(0, 0);
+        }
+
+        &:hover{
+          img{
+            transform: translate(10px, -10px);
+
+          }
+        }
+      }
+    }
+
+    h1{
+      font-size: 6em;
+    }
+
+    h3{
+      font-size: 1.5em;
+      
+      a{
+        color: $link-color;
+        text-decoration: none;
+      }
+    }
+  }
+  
+}
