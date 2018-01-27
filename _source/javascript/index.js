@@ -24,26 +24,44 @@ $(function(){
 //  Form Functions
 
   $(".btn-submit-recruit").on("click", function(){
-    universalItemsJudge( $("#recruit").find("[type='text'], [type='email']") );
+    if(universalItemsJudge( $("#recruit").find("[type='text'], [type='email']")).msg === null){
+      $("#recruit").submit();
+    }else{
+      $(".form-set > input, .form-set > textarea").removeClass("highlight");
+      var problemElem = universalItemsJudge( $("#recruit").find("[type='text'], [type='email']"));
+      $(".error-message").remove();
+      
+      problemElem.targetJqElm.addClass("highlight");
+      problemElem.targetJqElm.parent().find("span").after('<span class="error-message">' + problemElem.msg + '</span>')
+    }
   });
 
   $(".btn-submit-contact").on("click", function(){
-    universalItemsJudge( $("#contact").find("[type='text'], [type='email']") );
+    if(universalItemsJudge( $("#contact").find("[type='text'], [type='email']")).msg === null){
+      $("#contact").submit();
+    }else{
+      $(".form-set > input, .form-set > textarea").removeClass("highlight");
+      var problemElem = universalItemsJudge( $("#contact").find("[type='text'], [type='email']"));
+      $(".error-message").remove();
+      
+      problemElem.targetJqElm.addClass("highlight");
+      problemElem.targetJqElm.parent().find("span").after('<span class="error-message">' + problemElem.msg + '</span>')
+    }
   });
 
   function universalItemsJudge( itemsJqElmArray ){
-    let errorStatus = {
+    var errorStatus = {
       msg: null,
       targetJqElm: null
     };
     itemsJqElmArray.each(function (){
       errorStatus.targetJqElm = $(this);
       if( $(this).val().trim().length < 1 || $(this).val().trim().match(/^( |　|[0-9])$/) != null ){
-        errorStatus.msg = "item is empty.";
+        errorStatus.msg = "入力してください。";
         return false;
       }
       if( $(this).attr("type") == "email" && $(this).val().trim().match(/^[!#-9A-~]+@+[a-z0-9]+.+[^.]$/i) === null ){
-        errorStatus.msg = "item is not email.";
+        errorStatus.msg = "不正なメールアドレスです。";
         return false;
       }
     });
