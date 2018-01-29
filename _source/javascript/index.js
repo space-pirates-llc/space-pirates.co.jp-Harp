@@ -1,4 +1,10 @@
 $(function(){
+  
+//  Detects fraction card in recruit
+  
+  if($(".recruit-card").length % 2 !== 0){
+    $(".recruit-card").last().addClass("fraction");
+  }
 
 //  DOM Functions
 
