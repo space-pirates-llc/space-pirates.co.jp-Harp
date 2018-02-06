@@ -73,5 +73,10 @@ $(function(){
     });
     return errorStatus;
   }
+  
+  if($(".recruit-card").length <= 0){
+    $(".submit-card").remove();
+    $(".recruit-container").append("<h2>現在募集はありません。</h2>")
+  }
 
 })
