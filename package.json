@@ -4,7 +4,9 @@
   "description": "## Setup",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "harp server _source",
+    "build": "harp compile _source ./public"
   },
   "repository": {
     "type": "git",

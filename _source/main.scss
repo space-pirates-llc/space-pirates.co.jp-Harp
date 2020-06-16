@@ -2,22 +2,32 @@
 @import "partial/responsive";
 @import "partial/skewbox";
 
-*{
+* {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
+.main {
+  margin: 0 auto;
+  max-width: 1280px;
+
+  @media screen and (max-width: 1320px) {
+    padding: 20px;
+  }
+}
+
+body {
   margin: 0;
+  overflow-x: hidden;
   font-family: $medium-font;
 }
 
-hr{
+hr {
   border: none;
   clear: both;
 }
 
-h1{
+h1 {
   font-family: $bold-font;
   font-weight: $bold-weight;
   margin-bottom: -5px;
@@ -25,14 +35,14 @@ h1{
   font-size: 1.7em;
 }
 
-header{
+header {
   position: fixed;
   height: 80px;
   width: 100%;
   z-index: 10;
   background: $pure-white;
-  
-  ul{
+
+  ul {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -40,12 +50,12 @@ header{
     padding: 0px;
     width: 650px;
     line-height: 80px;
-    
-    @media screen and (max-width: $break-small){
+
+    @media screen and (max-width: $break-small) {
       width: 350px;
     }
-    
-    li{
+
+    li {
       padding: 0px;
       list-style: none;
       text-transform: uppercase;
@@ -53,23 +63,39 @@ header{
       font-size: 1.1em;
       font-family: $bold-font;
       font-weight: $bold-weight;
-      @media screen and (max-width: $break-small){
+      @media screen and (max-width: $break-small) {
         font-size: 0.9em;
       }
-      a{
+      a {
         cursor: pointer;
       }
     }
   }
 }
 
-.logobox{
+footer {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 60px;
+  background-color: $white-gray;
+
+  .privacy-policy {
+    color: #212121;
+    font-size: 11px;
+    line-height: 60px;
+    color: $dark-gray;
+    letter-spacing: 1px;
+  }
+}
+
+.logobox {
   @extend .skewbox;
   margin-top: 0;
   height: 300px;
 }
 
-.logoimage{
+.logoimage {
   position: relative;
   margin: 80px auto 100px auto;
   height: 500px;
@@ -77,41 +103,64 @@ header{
   object-fit: contain;
 }
 
-.about-container{
+.about-container {
   box-sizing: border-box;
   margin-top: 0px !important;
   padding: 0px 60px;
-  
-  .about-descs{
-    box-sizing: border-box;
-    padding-left: 20px;
+
+  .about-items {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+
+    p {
+      &:nth-child(1n) {
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+
+      &:nth-child(2n) {
+        padding-left: 20px;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+
+      &.small {
+        font-size: 14px;
+      }
+
+      a {
+        color: darken($color: $link-color, $amount: 0.1);
+      }
+    }
   }
-  p{
+
+  p {
     @extend h1;
     font-family: $medium-font;
     text-align: left;
     font-weight: 300;
     font-size: 1.2em;
     margin: 0 0 32px 0;
-    @media screen and (max-width: $break-small){
+    @media screen and (max-width: $break-small) {
       font-size: 0.9em;
     }
-    &.small{
+
+    &.small {
       font-size: 1em;
-      @media screen and (max-width: $break-small){
+      @media screen and (max-width: $break-small) {
         font-size: 0.8em;
       }
     }
   }
 }
 
-.news-container{
-  @media screen and (max-width: $break-small){
+.news-container {
+  @media screen and (max-width: $break-small) {
     padding: 0 !important;
   }
 }
 
-.news-articles-wrapper{
+.news-articles-wrapper {
   position: relative;
   box-sizing: border-box;
   width: 100%;
@@ -119,54 +168,55 @@ header{
   margin-bottom: 40px;
   background-color: $pure-white;
   box-shadow: 0px 2px 6px $bright-gray;
-  
-  @media screen and (max-width: $break-small){
+
+  @media screen and (max-width: $break-small) {
     padding: 15px 10px;
   }
-    
-  div{
+
+  div {
     box-sizing: border-box;
     padding: 15px 10px;
-    
-    @media screen and (max-width: $break-small){
+
+    @media screen and (max-width: $break-small) {
       padding: 10px 8px;
     }
-    
-    p{
+
+    p {
       color: $dark-gray;
       vertical-align: top;
       font-size: 0.95em;
       margin: 0;
       padding: 0;
-      
-      @media screen and (max-width: $break-small){
+
+      @media screen and (max-width: $break-small) {
         font-size: 0.8em;
         display: block !important;
         width: 100% !important;
       }
-      
-      &:nth-child(1){
+
+      &:nth-child(1) {
         @extend .col-1-5;
         color: $normal-gray;
         text-align: center;
-        @media screen and (max-width: $break-small){
+        @media screen and (max-width: $break-small) {
           font-size: 0.6em;
           text-align: left !important;
         }
       }
-      
-      &:nth-child(2){
+
+      &:nth-child(2) {
         @extend .col-4-5;
         word-break: break-all;
         text-align: left;
       }
     }
-    a{
+
+    a {
       margin-left: 20%;
       font-size: 0.8em;
       text-decoration: none;
       color: $link-color;
-      @media screen and (max-width: $break-small){
+      @media screen and (max-width: $break-small) {
         margin: 0;
         display: block;
         font-size: 0.4em;
@@ -176,7 +226,7 @@ header{
   }
 }
 
-@mixin button{
+@mixin button {
   display: block;
   margin: 50px auto 0px auto;
   background-color: $white;
@@ -186,19 +236,19 @@ header{
   width: 120px;
   height: 45px;
 
-  &:hover{
+  &:hover {
     background-color: $bright-gray;
   }
 
-  span{
+  span {
     display: block;
     text-align: center;
     line-height: 45px;
   }
 }
 
-.recruit-container{
-  h2{
+.recruit-container {
+  h2 {
     text-align: center;
     font-weight: 400;
     font-size: 1em;
@@ -207,7 +257,7 @@ header{
   }
 }
 
-.recruit-card{
+.recruit-card {
   position: relative;
   display: inline-block;
   width: 440px;
@@ -216,18 +266,18 @@ header{
   padding: 80px 20px 30px 20px;
   vertical-align: top;
   box-shadow: 0px 2px 6px $bright-gray;
-  
-  @media screen and (max-width: 1080px){
+
+  @media screen and (max-width: 1080px) {
     width: 100%;
     margin: 20px 0 20px 0;
   }
-  
-  @media screen and (max-width: $break-small){
+
+  @media screen and (max-width: $break-small) {
     margin: 30px 0px;
     width: 100%;
   }
-  
-  .card-header{
+
+  .card-header {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -236,16 +286,16 @@ header{
     box-sizing: border-box;
     padding-left: 20px;
     background-color: $bright-black;
-    
-    span{
+
+    span {
       line-height: 60px;
       color: $white;
       text-transform: capitalize;
       font-size: 1.2em;
       font-family: $semibold-font;
     }
-    
-    .minify-button{
+
+    .minify-button {
       position: relative;
       float: right;
       box-sizing: border-box;
@@ -254,23 +304,23 @@ header{
       padding: 10px;
       height: 60px;
       width: 60px;
-      
-      @mixin cross-bars{
+
+      @mixin cross-bars {
         content: "";
         position: absolute;
         background-color: $white;
         transition: 0.2s ease;
       }
-      
-      &:before{
+
+      &:before {
         @include cross-bars;
         top: 28px;
         left: 15px;
         height: 4px;
         width: 30px;
       }
-      
-      &:after{
+
+      &:after {
         @include cross-bars;
         top: 15px;
         left: 28px;
@@ -278,55 +328,55 @@ header{
         width: 4px;
         opacity: 1;
       }
-      
-      &.open{
-        &:after{
+
+      &.open {
+        &:after {
           opacity: 0;
         }
       }
     }
   }
-  
-  p:nth-child(even){
+
+  p:nth-child(even) {
     color: $very-dark-gray;
     font-size: 1.2em;
     margin-bottom: 0;
   }
-  
-  p:nth-child(odd){
+
+  p:nth-child(odd) {
     color: $dark-gray;
     margin-top: 3px;
     font-size: 0.9em;
   }
-  
-  .btn-select-ship{
+
+  .btn-select-ship {
     @include button;
   }
 }
 
-.submit-card{
+.submit-card {
   @extend .recruit-card;
   width: 80%;
   display: block;
   padding: 60px 0 0 0;
   margin: 40px auto;
-  @media screen and (max-width: $break-small){
+  @media screen and (max-width: $break-small) {
     margin: 30px 0px;
     width: 100%;
   }
-  .form-set{
+  .form-set {
     box-sizing: border-box;
     padding: 10px 20px;
     position: relative;
-    @media screen and (max-width: $break-small){
+    @media screen and (max-width: $break-small) {
       display: block;
       width: 100%;
     }
-    span{
+    span {
       font-size: 0.7em;
       color: $dark-gray;
     }
-    @mixin text-input{
+    @mixin text-input {
       background-color: $white-gray;
       box-sizing: border-box;
       padding: 5px 10px;
@@ -337,116 +387,116 @@ header{
       font-size: 1em;
       outline: none;
     }
-    input{
+    input {
       @include text-input;
     }
-    textarea{
+    textarea {
       @include text-input;
       height: 5em;
       resize: vertical;
     }
   }
-  .btn-submit-recruit{
+  .btn-submit-recruit {
     @include button;
     font-size: 1em;
   }
-  
-  form > *{
+
+  form > * {
     opacity: 0;
     transition: 0.2s ease;
   }
-  
-  form{
+
+  form {
     display: none;
   }
-  
-  &.open{
+
+  &.open {
     padding: 90px 20px 30px 20px;
-    form{
+    form {
       display: block;
-      *{
+      * {
         opacity: 1;
       }
     }
   }
 }
 
-.contact-card{
+.contact-card {
   @extend .submit-card;
   padding: 90px 20px 30px 20px;
   padding-top: 30px;
   background-color: $white;
-  
-  form{
+
+  form {
     display: block;
-    *{
+    * {
       opacity: 1;
     }
   }
-  
-  .btn-submit-contact{
+
+  .btn-submit-contact {
     @include button;
     font-size: 1em;
   }
 }
 
-[class*="-container"]{
+[class*="-container"] {
   max-width: 960px;
   padding: 0px 60px;
   margin: 0px auto;
-  @media screen and (max-width: $break-small){
+  @media screen and (max-width: $break-small) {
     padding: 0px 20px;
   }
 }
 
-.col-1-5{
+.col-1-5 {
   display: inline-block;
   vertical-align: top;
   width: 20%;
 }
 
-.col-4-5{
+.col-4-5 {
   display: inline-block;
   vertical-align: top;
   width: 80%;
 }
 
-.col-1-2{
+.col-1-2 {
   display: inline-block;
   vertical-align: top;
   width: 50%;
 }
 
-.title-wrapper{
+.title-wrapper {
   text-align: center;
   margin-top: 70px;
   margin-bottom: 30px;
   clear: both;
-  
-  span{
+
+  span {
     font-family: $bold-font;
     font-weight: $bold-weight;
     font-size: 0.7em;
   }
 }
 
-.no-margin-top{
+.no-margin-top {
   margin-top: 0 !important;
 }
 
-.absolute{
+.absolute {
   position: absolute !important;
 }
 
-.highlight{
+.highlight {
   background-color: $error-color !important;
 }
 
-.fraction{
+.fraction {
   width: 100%;
   margin: 20px 0 20px 0;
 }
 
-.error-message{
+.error-message {
   float: right;
 }

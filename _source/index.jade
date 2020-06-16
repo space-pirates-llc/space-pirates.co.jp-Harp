@@ -7,89 +7,90 @@ header.minified
 main
   div.skewbox.logobox.skewbot.skewtop.absolute
   img(src="./images/space-pirates-logo.svg").logoimage
-  
+
   div.about-container 
     div.title-wrapper.no-margin-top
       h1 ABOUT
       span 会社概要
 
-    div.about-titles.col-1-5
+    .about-items
       p 会社名
-      p 代表社員
-      p 設立
-      p 資本金
-      p 事業内容
-
-    div.about-descs.col-4-5
       p 宇宙海賊合同会社
+      p 代表社員
       p 草野 翔
+      p 設立
       p 2017年 3月 23日
+      p 資本金
       p 100万円
+      p 事業内容
       p.small コンピュータソフトウェアおよびハードウェアのコンサルティング 
         br
         |企画 研究 開発 人材育成 職業適性 能力開発のための教育等
-  
+      p.small プライバシーポリシー
+      p.small: a(href="/privacy") こちらを参照
+
+
+    //- div.about-titles.col-1-5
+    //-   p 会社名
+    //-   p 代表社員
+    //-   p 設立
+    //-   p 資本金
+    //-   p 事業内容
+
+    //- div.about-descs.col-4-5
+    //-   p 宇宙海賊合同会社
+    //-   p 草野 翔
+    //-   p 2017年 3月 23日
+    //-   p 100万円
+    //-   p.small コンピュータソフトウェアおよびハードウェアのコンサルティング 
+    //-     br
+    //-     |企画 研究 開発 人材育成 職業適性 能力開発のための教育等
+
   div.skewbox.skewtop.skewbot.margintop.marginbot
     div.news-container
       div.title-wrapper
         h1 NEWS
         span 最近のできごと
-        
+
       div.news-articles-wrapper
-      
+
         div
           p 2017/08/18
           p RubyKaigi 2017 のシルバースポンサーになりました
           a(href="http://rubykaigi.org/2017/sponsors#space-pirates") RubyKaigi 2017 
-        
+
         div
           p 2017/03/23
           p 創業
-        
+
   div.recruit-container
     div.title-wrapper
       h1 RECRUIT
       span CREW募集
-      
+
     //-div.recruit-card
       div.card-header
         span garradd
-        
+
       p 内容
       p Webデザインその他
       p 募集職種
-      p ああああああああああああ
+      p hoge
       p 必須条件
-      p ああああああああああああああああああああああああああああああああああああああああああああ
+      p fuga
       p 歓迎スキル
       p あああああああああああ
         br
-        |ああああああああああああああああああああああ
-      
+        |piyo
+
       div.btn-select-ship
-       span 応募
-      
-    //-div.recruit-card
-      div.card-header
-        span vidofnir
-        
-      p 内容
-      p Webデザインその他
-      p 募集職種
-      p ああああああああああああ
-      p 必須条件
-      p あああああああああああ
-      p 歓迎スキル
-      p あああああああああああ
-      
-      div.btn-select-ship
-       span 応募
-       
+        span 応募
+
     div.submit-card
       div.card-header
         span 応募フォーム
         div.minify-button
-        
+
       form(name="recruit" netlify)#recruit
 
         div.form-set.name.col-1-2
@@ -111,17 +112,17 @@ main
           span 内容
           br
           textarea(type="text" name="content" required)
-          
+
         input.btn-submit-recruit(value="送信" type="button")
-        
+
   div.skewbox.skewtop.margintop
     div.contact-container
       div.title-wrapper
         h1 CONTACT
         span ご意見・その他
-      
+
       div.contact-card
-      
+
         form(name="contact" netlify)#contact
 
           div.form-set.col-1-2
@@ -140,7 +141,6 @@ main
             textarea(type="text" name="content" required)
 
           input.btn-submit-contact(value="送信" type="button")
-          
+
 script(src="javascript/jquery-3.2.1.min.js")
 script(src="javascript/index.js")
-          
