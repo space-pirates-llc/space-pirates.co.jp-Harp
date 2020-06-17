@@ -20,6 +20,6 @@
   "homepage": "https://github.com/space-pirates-llc/space-pirates.co.jp-Harp#readme",
   "dependencies": {},
   "devDependencies": {
-    "harp": "^0.25.0"
+    "harp": "^0.32.0"
   }
 }
